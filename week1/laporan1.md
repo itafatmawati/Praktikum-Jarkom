@@ -22,5 +22,5 @@ Artinya, Wireshark bisa menangkap dan menampilkan data yang lewat di jaringan in
 ![Tampilan akhir](../assets/image/HASIL%20AKHIR.png)
 5. Selesai.
 
-## **Kesimpulan:**
+## **Kesimpulan**
 Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa Wireshark merupakan aplikasi yang digunakan untuk menganalisis lalu lintas jaringan secara detail. Melalui Wireshark, pengguna dapat menangkap dan memantau paket data yang dikirim dan diterima dalam suatu jaringan. Pada praktikum ini, Wireshark digunakan untuk mengamati aktivitas protokol HTTP dengan mengakses sebuah halaman website. Dengan menggunakan filter "http", paket data yang berkaitan dengan HTTP dapat ditampilkan sehingga memudahkan pengguna dalam melakukan analisis. Salah satu paket yang dapat diamati adalah paket dengan informasi (text/html) yang menunjukkan adanya pengiriman data halaman web dari server ke browser.
