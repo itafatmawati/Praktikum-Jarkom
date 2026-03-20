@@ -9,7 +9,7 @@ Eksplorasi HTTP dengan mengunduh file HTML yang sangat sederhana:
 1. Jalankan wireshark anda
 2. Salin link berikut : http://gaia.cs.umass.edu/wireshark-labs/HTTP
 wireshark-file1.html , lalu buka web browser anda, dan jalankan link tersebut dengan memastikan bahwa format web yaitu "http". Tampilan web akan seperti gambar di bawah ini:
-![web 3.2](../assets/image/week%203/web3.2.png)
+![web 3.2](../assets/image/week%203/web-3.2.png)
 3. Masuk ke wireshark, lalu klik ikon kotak merah pada bagian atas filter untuk stop capture. lalu pada baris filter, cari "http".
 4. Temukan baris seperti gambar di bawah ini, lalu klik untuk melihat isi dari baris tersebut :
 ![ws 3.2](../assets/image/week%203/ws-3.2.png)
