@@ -1,4 +1,4 @@
-# Laporan Praktikum Jarkom week 6 & 7
+# Laporan Praktikum Jarkom week 6 
 
 ## TCP
 ## Menangkap Tansfer TCP dalam Jumlah Besar dari Komputer Pribadi ke Remote Server 
@@ -120,3 +120,6 @@ Dapatkah Anda mengidentifikasi di mana fase “slow start” TCP dimulai dan ber
 pada bagian mana algoritma ”congestion avoidance” mengambil alih? 
 ![soal-1](../assets/image/week%206/soal-1%206.5.png)
 Berdasarkan garfik di atas, fase slow start dimulai dari awal transmisi (sekitar 0 detik) dan berlangsung hingga sekitar 0.8–1 detik, yang ditandai dengan kenaikan eksponensial pada grafik. Setelah itu, grafik berubah menjadi linear, menandakan bahwa fase congestion avoidance mulai mengambil alih hingga akhir transmisi. Kemudian, terdapat beberapa perbedaan antara perilaku TCP ideal dan data hasil pengukuran. Secara teori, fase slow start seharusnya menunjukkan peningkatan eksponensial yang jelas, namun pada grafik hanya terlihat sedikit kenaikan di awal karena fase ini berlangsung sangat singkat. Selain itu, transisi dari slow start ke congestion avoidance terlihat lebih halus. Grafik juga tidak menunjukkan adanya penurunan drastis yang menandakan packet loss, sehingga dapat disimpulkan bahwa kondisi jaringan relatif stabil. Bentuk grafik yang menyerupai tangga juga menunjukkan bahwa data dikirim dalam burst per RTT.
+
+## Kesimpulan
+Pemanfaatan Wireshark dalam analisis TCP memungkinkan kita memahami secara langsung bagaimana proses komunikasi data berlangsung antara client dan server, mulai dari pembentukan koneksi melalui three-way handshake hingga pengiriman data menggunakan nomor urut dan acknowledgement untuk menjamin keandalan. Selain itu, mekanisme penting seperti flow control dan congestion control dapat diamati melalui trace paket, termasuk fase slow start dan congestion avoidance yang mengatur laju pengiriman data agar tidak terjadi kemacetan jaringan. Dengan menganalisis parameter seperti RTT, throughput, ukuran segmen, serta kemungkinan retransmisi, kita dapat mengevaluasi performa koneksi TCP secara lebih mendalam dan memahami bagaimana TCP menjaga efisiensi serta keandalan dalam transfer data skala besar.
