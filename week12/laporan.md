@@ -1,20 +1,20 @@
-## Laporan Praktikum Modul 12
+## **LAPORAN PRAKTIKUM MODUL 12**
 
 ## ICMP
 ICMP (Internet Control Message Protocol) adalah protokol jaringan yang digunakan untuk mengirim pesan kontrol, diagnosa, dan laporan kesalahan antar perangkat di internet. 
 
-Struktur ICMP terdiri dari:  
-**Type** -> jenis pesan ICMP  
-**Code** -> detail/error spesifik  
-**Checksum** -> pengecekan error data  
-**Data** -> isi pesan  
+**Struktur ICMP terdiri dari:**  
+-**Type** -> jenis pesan ICMP  
+-**Code** -> detail/error spesifik  
+-**Checksum** -> pengecekan error data  
+-**Data** -> isi pesan  
 
-Beberapa tipe ICMP:  
-**Echo Request** -> permintaan ping  
-**Echo Reply** -> balasan ping  
-**Destination Unreachable** -> tujuan tidak tercapai  
-**Time Exceeded** -> waktu paket habis  
-**Redirect** -> pengalihan rute jaringan  
+**Beberapa tipe ICMP:**  
+-**Echo Request** -> permintaan ping  
+-**Echo Reply** -> balasan ping  
+-**Destination Unreachable** -> tujuan tidak tercapai  
+-**Time Exceeded** -> waktu paket habis  
+-**Redirect** -> pengalihan rute jaringan  
 
 ## Ping 
 ping adalah perintah jaringan yang digunakan untuk menguji koneksi antara komputer pengirim dan host tujuan. Perintah ini bekerja dengan mengirim paket ICMP Echo Request ke server atau perangkat tujuan, lalu menunggu balasan berupa ICMP Echo Reply. Jika balasan diterima, berarti koneksi jaringan berhasil dan host dapat dijangkau. Selain itu, ping juga dapat digunakan untuk mengetahui waktu respons atau latency jaringan.
@@ -26,13 +26,14 @@ Gunakan perintah "ping -n 10 www.ust.hk" ntuk mengecek apakah website atau serve
 ![foto-1](../assets/image/week%2012/1.png)
 <br>
 <br>
-Berikut tampilan tangkapan pada wireshark:
+Berikut tampilan tangkapan paket pada Wireshark:
 <br>
 <br>
 ![foto-2](../assets/image/week%2012/2.png)
 <br>
 <br>
-Berdasarkan tangkapan layar di atas, terdapat 20 paket karena perintah menggunakan "-n 10" yaitu sebagai instruksi khusus agar laptop mengirim paket sebanyak 10 kali, dan karena paket terdiri dari "**request**" dan "**reply**" sehingga paket dikali dua 
+
+Berdasarkan tangkapan layar di atas, terdapat 20 paket karena perintah menggunakan "-n 10" yaitu sebagai instruksi khusus agar laptop mengirim paket sebanyak 10 kali, dan karena paket terdiri dari **request** dan **reply** sehingga paket dikali dua.
 <br>
 <br>
 
@@ -62,13 +63,14 @@ Gunakan perintah "tracert www.inria.fr" untuk melacak jalur perjalanan paket dat
 ![foto-5](../assets/image/week%2012/5.png)
 <br>
 <br>
-Berikut tampilan tangkapan pada wireshark:
+Berikut tampilan tangkapan paket pada Wireshark:
 <br>
 <br>
 
 ![foto-6](../assets/image/week%2012/6.png)
 <br>
 <br>
+
 Berdasarkan log paket pada Wireshark, terlihat bahwa perintah "**tracert**" bekerja dengan menaikkan nilai TTL (Time-to-Live) secara bertahap, dimulai dari TTL=1 hingga TTL=7, untuk melacak jalur menuju IP 128.93.162.83. Setiap router yang dilewati akan mengurangi nilai TTL paket. Ketika nilai TTL habis, router akan mengirim balasan ICMP seperti **Type 11 (Time Exceeded)** atau **Type 3 (Destination Unreachable)** ke host pengirim. Dari balasan tersebut, host dapat mengetahui setiap hop atau router yang dilewati paket. setiap hop atau router yang dilewati paket, sehingga jalur jaringan dari komputer lokal menuju server tujuan dapat teridentifikasi secara bertahap.
 <br>
 <br>
@@ -76,6 +78,7 @@ Berdasarkan log paket pada Wireshark, terlihat bahwa perintah "**tracert**" beke
 ![foto-7](../assets/image/week%2012/7.png)
 <br>
 <br>
+
 Tangkapan layar di atas merupakan pesan eror ICMP Type 11 (Time-to-live exceeded) yang dapat diidentifikasi melalui kolom Info serta baris **> Type: Time-to-live exceeded (11)** pada detail protokol. Pesan ini dikirim oleh router karena nilai TTL paket telah habis menjadi 0 setelah dikurangi di hop tersebut, yang dibuktikan dengan adanya keterangan **Code: 0 (Time to live exceeded in transit)** tepat di bawahnya, serta dilampirkannya salinan paket Echo Request asli di dalam payload sebagai bukti bahwa paket tersebut telah dihancurkan.
 
 ## 📝 Kesimpulan
