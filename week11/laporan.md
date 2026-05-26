@@ -3,19 +3,19 @@
 ## DHCP
 DHCP adalah sebuah protokol atau aturan jaringan yang berfungsi untuk membagikan IP address (alamat IP) secara otomatis ke setiap perangkat (seperti HP, laptop, atau komputer) yang terhubung ke dalam suatu jaringan.
 
-**Proses DHCP (DORA):**
--**Discover** -> client mencari server DHCP
--**Offer** -> server menawarkan IP
--**Request** -> client meminta IP tersebut
--**Acknowledge (ACK)** -> server mengonfirmasi pemberian IP
+**Proses DHCP (DORA):**  
+-**Discover** -> client mencari server DHCP  
+-**Offer** -> server menawarkan IP  
+-**Request** -> client meminta IP tersebut  
+-**Acknowledge (ACK)** -> server mengonfirmasi pemberian IP  
 
-**Jenis Pesan DHCP:**
--**DHCP Discover**
--**DHCP Offer**
--**DHCP Request**
--**DHCP ACK**
--**DHCP NAK**
--**DHCP Release**
+**Jenis Pesan DHCP:**  
+-**DHCP Discover**  
+-**DHCP Offer**  
+-**DHCP Request**  
+-**DHCP ACK**  
+-**DHCP NAK**  
+-**DHCP Release**  
 <br>
 <br>
 
