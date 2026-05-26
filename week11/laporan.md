@@ -27,3 +27,7 @@ Berdasarkan tangkapan layar di atas, proses diawali dengan paket **Discover**, d
 Selanjutnya, pada baris 36, terjadi proses DHCP Renewal (perpanjangan sewa). Client yang sudah memiliki IP address menghubungi DHCP Server kembali untuk memperpanjang masa sewa IP-nya, yang kemudian disetujui oleh server melalui paket **ACK** pada baris 37.
 
 Aktivitas jaringan berlanjut pada baris 41, di mana client mengirimkan paket **Release** secara langsung ke arah server (192.168.1.1). Proses release ini bertujuan untuk melepaskan dan mengembalikan alokasi IP address yang sedang digunakan kembali ke dalam pool milik server, sehingga status IP pada client kembali kosong. Akibat dari pelepasan IP tersebut, pada baris 42 hingga 46, perangkat client mendeteksi ketiadaan alamat IP dan secara otomatis menginisiasi kembali siklus DORA dari awal.
+
+## 📝 Kesimpulan
+
+Berdasarkan hasil praktikum, dapat dipahami bahwa DHCP berfungsi untuk memberikan alamat IP secara otomatis kepada perangkat yang terhubung ke jaringan melalui proses DORA, yaitu Discover, Offer, Request, dan ACK. Dari hasil analisis Wireshark, terlihat bahwa client yang belum memiliki IP akan meminta konfigurasi ke DHCP Server, kemudian server memberikan penawaran IP hingga akhirnya IP berhasil dikonfigurasi pada client. Selain itu, praktikum juga menunjukkan adanya proses DHCP Renewal untuk memperpanjang masa sewa IP serta DHCP Release untuk melepaskan IP kembali ke server. Setelah IP dilepaskan, client akan kembali memulai proses DORA dari awal untuk memperoleh alamat IP baru.
