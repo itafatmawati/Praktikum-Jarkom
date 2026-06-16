@@ -64,7 +64,6 @@ Kemudian, gunakan filter "wlan.fc.type==0 && wlan.fc.subtype==10(Subtype 10 meru
 ![as-disc](../assets/image/week14/as-disc.png)
 Pada gambar di atas, tidak ditemukan paket apapun yang menunjukkan bahwa tidak ada Disassociation frame yang tertangkap dalam jejak tersebut.
 <br>
-<br>
 
 ## 📝 Kesimpulan
 Berdasarkan hasil praktikum, dapat disimpulkan bahwa Wireshark dapat digunakan untuk menganalisis komunikasi pada jaringan WiFi berbasis standar IEEE 802.11. Melalui pengamatan terhadap file Wireshark_802_11.pcap, berhasil diidentifikasi berbagai jenis frame, yaitu Beacon Frame, Data Frame, serta Association dan Disassociation . Beacon Frame digunakan oleh Access Point untuk mengiklankan informasi jaringan seperti SSID dan channel, sedangkan Data Frame digunakan untuk mentransmisikan data pengguna, yang pada praktikum ini ditunjukkan oleh permintaan HTTP terhadap file alice.txt. Selain itu, proses asosiasi antara host dan Access Point juga dapat diamati melalui pertukaran frame Association Request dan Association Response. Hasil analisis menunjukkan bahwa host sempat melakukan beberapa kali percobaan asosiasi ke jaringan linksys_SES_24086, namun akhirnya berhasil terhubung kembali ke Access Point 30 Munroe St. Dengan demikian, praktikum ini memberikan pemahaman mengenai mekanisme komunikasi dan pengelolaan koneksi pada jaringan WiFi IEEE 802.11.
