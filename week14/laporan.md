@@ -3,7 +3,6 @@
 ## WiFi
 Wireless Fidelity (WiFi) merupakan teknologi jaringan nirkabel yang menggunakan standar IEEE 802.11 untuk memungkinkan perangkat berkomunikasi tanpa menggunakan media kabel. Dalam jaringan WiFi, komunikasi dilakukan melalui berbagai jenis frame, seperti beacon frame, data frame, serta frame asosiasi dan disasosiasi yang berfungsi untuk mengatur proses koneksi antara perangkat pengguna dan access point.
 <br>
-<br>
 
 ## Starting 
 Setelah download file zip http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces.zip dan ekstrak file 
@@ -11,8 +10,8 @@ Wireshark_802_11.pcap, file tersebut dibuka menggunakan aplikasi Wireshark.
 <br>
 
 Berikut Tampilan yang dihasilkan:
+
 ![-1](../assets/image/week14/-1.png)
-<br>
 <br>
 
 ## Beacon Frames
@@ -20,14 +19,15 @@ Beacon Frame merupakan frame manajemen pada protokol IEEE 802.11 yang dikirim se
 <br>
 
 Gunakan filter "wlan.fc.type_subtype==8" untuk secara spesifik hanya menampilkan Beacon frames:
+
 ![foto-1](../assets/image/week14/foto-1.png)
 <br>
 
 Lalu, pilih satu paket yang ada untuk melihat detail:
+
 ![foto-2](../assets/image/week14/foto-2.png)
 <br>
 Berdasarkan gambar di atas, diketahui bahwa paket tersebut merupakan Beacon Frame dengan Type/Subtype 0x0008 yang dikirim oleh Access Point (AP) untuk mengumumkan keberadaan jaringan kepada perangkat di sekitarnya. Dari informasi yang terdapat pada frame tersebut, diperoleh bahwa AP menggunakan SSID "30 Munroe St" dan beroperasi pada Channel 6. Selain itu, Beacon Frame juga memuat berbagai parameter jaringan lainnya, seperti Supported Rates hingga 54 Mbit/s serta informasi kode negara (US, Indoor) yang digunakan untuk mendukung proses komunikasi dan konfigurasi jaringan nirkabel.
-<br>
 <br>
 
 ## Data Transfer 
@@ -35,10 +35,10 @@ Data Transfer adalah proses pengiriman dan penerimaan data dari satu perangkat k
 <br>
 
 Untuk menganalisis proses data transfer, gunakan filter "tcp.port == 80" guna menampilkan lalu lintas HTTP:
+
 ![foto-3](../assets/image/week14/foto-3-2.png)
 <br>
 Berdasarkan gambar di atas, terlihat bahwa host dengan alamat IP 192.168.1.109 mengirimkan permintaan HTTP (HTTP GET) untuk mengakses file alice.txt yang berada pada server 128.119.245.12 (gaia.cs.umass.edu). Informasi tersebut terlihat pada bagian Hypertext Transfer Protocol, yaitu "GET /wireshark-labs/alice.txt HTTP/1.1." Selain itu, pada panel detail paket terlihat bahwa data HTTP tersebut dienkapsulasi dalam **IEEE 802.11 QoS Data Frame**, yang menunjukkan bahwa proses Data Transfer berlangsung melalui jaringan WiFi setelah host berhasil terhubung dengan Access Point.
-<br>
 <br>
 
 ## Association/Disassociation 
@@ -46,18 +46,21 @@ Association merupakan proses ketika sebuah host atau perangkat klien meminta izi
 <br>
 
 Untuk menganalisis proses Association, gunakan filter "wlan.fc.type==0 && wlan.fc.subtype==0(Subtype 0 merujuk pada Association Request)" seperti pada gambar di bawah ini:
+
 ![as-req](../assets/image/week14/as-req.png)
 <br>
 Pada gambar di atas,ditemukan beberapa frame Association Request yang dikirim host ke Access Point dengan SSID "linksys_SES_24086". Banyaknya frame yang dikirim menunjukkan bahwa host melakukan beberapa kali percobaan asosiasi namun tidak memperoleh respons yang sesuai.
 <br>
 
 Lalu, gunakan filter "wlan.fc.type==0 && wlan.fc.subtype==1(Subtype 1 merujuk pada Association Response)" seperti pada gambar di bawah ini:
+
 ![as-resp](../assets/image/week14/as-resp.png)
 <br>
 Pada gambar di atas, terlihat satu frame Association Response yang dikirim oleh Access Point 30 Munroe St kepada host sebagai balasan atas Association Request yang diterima. Frame ini menunjukkan bahwa proses asosiasi antara host dan Access Point berhasil dilakukan.
 <br>
 
 Kemudian, gunakan filter "wlan.fc.type==0 && wlan.fc.subtype==10(Subtype 10 merujuk pada Disassociation frame)" seperti pada gambar di bawah ini:
+
 ![as-disc](../assets/image/week14/as-disc.png)
 
 Pada gambar di atas, tidak ditemukan paket apapun yang menunjukkan bahwa tidak ada Disassociation frame yang tertangkap dalam jejak tersebut.
