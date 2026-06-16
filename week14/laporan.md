@@ -62,7 +62,6 @@ Pada gambar di atas, terlihat satu frame Association Response yang dikirim oleh 
 Kemudian, gunakan filter "wlan.fc.type==0 && wlan.fc.subtype==10(Subtype 10 merujuk pada Disassociation frame)" seperti pada gambar di bawah ini:
 
 ![as-disc](../assets/image/week14/as-disc.png)
-
 Pada gambar di atas, tidak ditemukan paket apapun yang menunjukkan bahwa tidak ada Disassociation frame yang tertangkap dalam jejak tersebut.
 <br>
 <br>
