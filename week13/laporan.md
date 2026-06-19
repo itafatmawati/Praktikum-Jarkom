@@ -5,10 +5,10 @@ ARP caching berfungsi untuk menyimpan sementara hasil pemetaan antara alamat IP 
 
 Untuk memulai, langkah pertama yang diperlukan adalah menghapus cache ARP:
 
-Untuk **MS-DOS** gunakan perintah arp –d *. Bendera –d mengindikasikan operasi penghapusan, dan * adalah wildcard yang mengatakan untuk 
-menghapus semua entri tabel. 
+- Untuk **MS-DOS** gunakan perintah arp –d *. Bendera –d mengindikasikan operasi penghapusan, dan * adalah wildcard yang mengatakan untuk 
+  menghapus semua entri tabel. 
 
-Untuk **Linux/Unix/MacOS** gunakan perintah arp –d *. Untuk menjalankan perintah ini diperlukan hak akses root.
+- Untuk **Linux/Unix/MacOS** gunakan perintah arp –d *. Untuk menjalankan perintah ini diperlukan hak akses root.
 
 ## 🔥 Mengamati Aksi ARP
 
@@ -37,5 +37,5 @@ Lalu pilih paket 12262:
 
 Pada paket ARP Reply, IP address pengirim **192.168.1.1** dipetakan dengan MAC address **84:3c:99:9a:ec:8d**. Dengan kata lain, host yang memiliki IP **192.168.1.1** memberitahukan bahwa MAC address miliknya adalah **84:3c:99:9a:ec:8d**. Balasan ini dikirim kepada laptop dengan **IP 192.168.1.5** dan MAC address **2c:98:11:3e:2c:c5**. Sehingga bisa disimpulkan bahwa **IP 192.168.1.1** memiliki MAC address **84:3c:99:9a:ec:8d**.
 
-## Kesimpulan 
+## 📝 Kesimpulan 
 Berdasarkan hasil pengamatan menggunakan Wireshark, protokol ARP digunakan untuk menerjemahkan alamat IP menjadi alamat MAC pada jaringan lokal. Ketika host belum mengetahui MAC address dari suatu alamat IP, host akan mengirimkan ARP Request secara broadcast ke seluruh perangkat dalam jaringan. Perangkat yang memiliki alamat IP yang dicari kemudian akan mengirimkan ARP Reply yang berisi MAC address miliknya. Hasil pengamatan menunjukkan bahwa host dengan **IP 192.168.1.1** memiliki MAC address **84:3c:99:9a:ec:8d**. Informasi pemetaan IP dan MAC tersebut kemudian disimpan dalam ARP cache sehingga komunikasi berikutnya dapat dilakukan tanpa perlu mengirim ARP Request kembali, yang membuat proses komunikasi menjadi lebih cepat dan efisien.
